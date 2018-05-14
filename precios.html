@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Precios de tus mejores guitarras!</title>
+    <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/invie.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  </head>
+  <body>
+    <section id="portada" class="portada background">
+      <header id="header" class="header contenedor">
+        <!-- logo y menu -->
+        <figure class="logotipo">
+          <img src="./images/invie.png" srcset="./images/invie.png 1x" width="186" height="60" alt="Invie logotipo"/>
+        </figure>
+        <span class="burguer-button icon-menu" id="burguer-button"></span>
+        <nav class="menu" id="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#guitarras">Guitarras</a></li>
+            <li><a href="precios.html">Precios</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- Portada -->
+      <div class="contenedor">
+        <h1 class="titulo">Guitarras <span>Invie</span>sibles</h1>
+        <h3 class="title-a">Sé la estrella de rock que siempre quisiste ser</h3>
+        <a class="button" href="#guitarras">Conoce más</a>
+      </div>
+    </section>
+    <section class="tabla">
+      <div class="contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Precio</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Invie Classic</td>
+              <td>$XXXXXX</td>
+              <td>Una guitarra muy pro</td>
+            </tr>
+            <tr>
+              <td>Invie Classic</td>
+              <td>$XXXXXX</td>
+              <td>Una guitarra muy pro</td>
+            </tr>
+            <tr>
+              <td>Invie Classic</td>
+              <td>$XXXXXX</td>
+              <td>Una guitarra muy pro</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="contenedor">
+        <div class="contacto">
+          <img src="./images/invie-white.png" alt="logotipo-blanco">
+          <a href="tel:+521234567890"><strong>Teléfono</strong> <span>1234567890</span></a>
+          <a href="mailto:contacto@invie.com"><strong>E-mail</strong> <span>contacto@invie.com</span></a>
+        </div>
+        <form class="formulario">
+          <div class="col1">
+            <label for="nombre">Nombre</label>
+            <input type="text" required name="nombre" id="nombre" />
+            <label for="email">E-mail</label>
+            <input type="email" required name="email" id="email"/>
+            <div class="sexo">
+              <label for="mujer">
+                <input type="radio" required name="sexo" checked id="mujer" value="mujer"/> Mujer
+              </label>
+              <label for="hombre">
+                <input type="radio" required name="sexo" id="hombre" value="hombre"/> Hombre
+              </label>
+            </div>
+            <div class="intereses">
+              <label for="cotizacion">
+                <input type="checkbox" name="intereses" id="cotizacion" checked value="cotizacion"/> Cotización
+              </label>
+              <label for="reclamos">
+                <input type="checkbox" name="intereses" id="reclamos" value="reclamos"/> Reclamos
+              </label>
+              <label for="comentario">
+                <input type="checkbox" name="intereses" id="comentario" value="comentarios"/> Comentarios
+              </label>
+              <label for="otros">
+                <input type="checkbox" name="intereses" id="otros" value="otros"/> Otros
+              </label>
+            </div>
+          </div>
+          <div class="col2">
+            <label for="comentarios">Comentarios</label>
+            <textarea name="name" id="comentarios" rows="7" cols="30"></textarea>
+            <input type="submit" name="enviar" value="Enviar" class="button"/>
+          </div>
+        </form>
+      </div>
+    </footer>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <script type="text/javascript">
+      var consulta = window.matchMedia('(max-width: 500px)');
+      consulta.addListener(mediaQuery);
+      var $burguerButton = document.getElementById('burguer-button');
+      var $menu = document.getElementById('menu');
+      function toggleMenu(){
+        $menu.classList.toggle('active');
+        $burguerButton.classList.toggle('icon-close');
+      };
+      function mediaQuery(){
+        if(consulta.matches)
+          $burguerButton.addEventListener('touchstart', toggleMenu);
+        else
+          $burguerButton.addEventListener('touchstart', toggleMenu);
+      }
+      //Necesita el atributo alt todas las img para funcionar
+      var bLazy = new Blazy({
+        selector: 'img'
+      });
+
+    </script>
+  </body>
+</html>
